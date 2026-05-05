@@ -184,10 +184,10 @@ public class VoskTranscriptionService
             generateWebsocketUrl(participant);
             VoskWebsocketStreamingSession streamingSession = new VoskWebsocketStreamingSession(
                     participant.getDebugName());
-            streamingSession.transcriptionTag = participant.getTranslationLanguage();
+            streamingSession.transcriptionTag = participant.getSourceLanguage();
             if (streamingSession.transcriptionTag == null)
             {
-                streamingSession.transcriptionTag = participant.getSourceLanguage();
+                streamingSession.transcriptionTag = participant.getTranslationLanguage();
             }
             return streamingSession;
         }
